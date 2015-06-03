@@ -40,7 +40,7 @@ $PAGE->set_context($context);
 $PAGE->set_url($url);
 $PAGE->set_pagelayout('standard');
 
-$title ="Social Activity";
+$title ="Tiempo promedio de actividades";
 
 $PAGE->set_title($title);
 $PAGE->set_heading($title);
@@ -48,7 +48,7 @@ $PAGE->set_heading($title);
 echo $OUTPUT->header();
 echo $OUTPUT->heading($title);
 		
-			echo "<h1>Assing</h1>";
+			echo "<h1>Tareas</h1>";
 			$params = array(1,1,$cmid,$USER->id);		
 			
 			$sql_assing = "SELECT asub.id, a.name, asub.timecreated, asub.timemodified
@@ -73,7 +73,7 @@ echo $OUTPUT->heading($title);
 			}
 			echo html_writer::table($table_assign);
 
-			echo "<h1>Resource</h1>";
+			echo "<h1>Recursos</h1>";
 			$sql_resources = "SELECT log.id, r.name, log.timecreated
 						 	FROM {course_modules} as cm INNER JOIN {modules} as m ON (cm.module = m.id)
 						   		INNER JOIN {resource} as r ON (r.course = cm.course)
